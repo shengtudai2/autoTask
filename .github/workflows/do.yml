@@ -1,6 +1,5 @@
 name: auto job
 on: 
-  workflow_dispatch:
   watch:
     types: started
   schedule:
