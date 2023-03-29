@@ -1,7 +1,7 @@
 name: auto job
 on: 
   watch:
-    types: stared
+    types: [started]
   schedule:
     - cron: '30 14 * * *'
     
