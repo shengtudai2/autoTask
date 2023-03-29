@@ -4,7 +4,7 @@ on:
   watch:
     types: started
   schedule:
-    - cron: '5 14 * * *'
+    - cron: '30 14 * * *'
     
 jobs:
   signin:
