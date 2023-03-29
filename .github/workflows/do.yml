@@ -1,7 +1,6 @@
 name: auto job
 on: 
-  schedule:
-    - cron '30 8 * * *'
+  workflow_dispatch:
     
 jobs:
   signin:
