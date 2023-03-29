@@ -1,0 +1,27 @@
+name: auto job
+on: 
+  workflow_dispatch:
+    
+jobs:
+  signin:
+    name: Sign in
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python environment
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run sign-in script
+        env:
+          QQ: ${{ secrets.QQ }}
+          USER: ${{ secrets.USER }}
+          PWD: ${{ secrets.PWD }}
+          NOTIFY: ${{ secrets.NOTIFY }}
+        run: python3 upvps_signin.py --user $USER --pwd $PWD --nty_url $NOTIFY --qq $QQ
