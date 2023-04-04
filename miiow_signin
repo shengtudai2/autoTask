@@ -10,7 +10,7 @@ beijing_time = now_utc + datetime.timedelta(hours=8)
 # 格式化时间为 "YYYY-MM-DD" 格式
 beijing_date = beijing_time.date().strftime('%Y-%m-%d')
 
-pwd = os.environ['PWD']
+pwd = os.environ['API_PWD']
 
 token = requests.get(f'http://47.100.47.189:10002/get_token/?pwd={pwd}').json()['access_token']
 
