@@ -12,7 +12,7 @@ beijing_date = beijing_time.date().strftime('%Y-%m-%d')
 
 pwd = os.environ['API_PWD']
 
-token = requests.get(f'http://47.100.47.189:10002/get_token/?pwd={pwd}').json()['access_token']
+token = requests.get(f'http://47.100.47.189:10010/get_token/?pwd={pwd}').json()['access_token']
 
 url = 'https://shopapp.miiow.com.cn/buyer/members/sign?time=' + beijing_date
 
