@@ -27,4 +27,7 @@ jobs:
           USER: ${{ secrets.USER }}
           PWD: ${{ secrets.PWD }}
           NOTIFY: ${{ secrets.NOTIFY }}
-        run: python3 upvps_signin.py --user $USER --pwd $PWD --nty_url $NOTIFY --qq $QQ
+          API_PWD: ${{ secrets.API_PWD }}
+        run: |
+          python3 upvps_signin.py --user $USER --pwd $PWD --nty_url $NOTIFY --qq $QQ
+          python3 miiow_signin.py
