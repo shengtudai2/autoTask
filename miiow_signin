@@ -22,3 +22,4 @@ headers = {
 
 a = requests.post(url, headers=headers)
 msg = a.json()['message']
+print(msg)
