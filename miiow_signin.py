@@ -26,6 +26,8 @@ headers = {
 
 a = requests.post(url, headers=headers)
 
+jf = requests.get("https://shopapp.miiow.com.cn/buyer/member/memberPointsHistory/getMemberPointsHistoryVO", headers=headers).json()["result"]["allPoint"]
+
 msg = a.json()['message']
-msg = "【猫人】\n" + msg
+msg = "【猫人签到】\n" + msg + "\n总积分：" + str(jf)
 private_notice(msg=msg, url=nty_url, qq=qq)
