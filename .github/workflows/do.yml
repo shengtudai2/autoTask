@@ -28,6 +28,8 @@ jobs:
           PWD: ${{ secrets.PWD }}
           NOTIFY: ${{ secrets.NOTIFY }}
           API_PWD: ${{ secrets.API_PWD }}
+          ali_refresh_token: ${{ secrets.ALI }}
         run: |
           python3 upvps_signin.py --user $USER --pwd $PWD --nty_url $NOTIFY --qq $QQ
           python3 miiow_signin.py
+          python3 aliyun_signin.py
