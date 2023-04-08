@@ -14,6 +14,7 @@ def daily_check(access_token):
         'Authorization': access_token
     }
     response = requests.post(url=url, headers=headers, json={}).text
+    print(response)
     result = json.loads(response)
     if 'success' in result:
         print('签到成功')
@@ -44,6 +45,7 @@ def update_token(refresh_token):
 
 def main(ali_refresh_token):
     access_token = update_token(ali_refresh_token)
+    print(access_token)
     content = daily_check(access_token)
 
 #签到
